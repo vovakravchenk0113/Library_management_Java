@@ -194,8 +194,6 @@ public class Library {
 
 			if (student != null) {
 
-				System.out.println("limit " + student.getLimit());
-
 				// check for limit of book
 				if (student.getLimit() > 2) {
 
@@ -205,7 +203,6 @@ public class Library {
 				} else {
 					// get empty index of book array
 					int index = student.emptyIndex();
-					System.out.println("index " + student.emptyIndex());
 
 					// issue book
 					book.issue();
@@ -257,8 +254,6 @@ public class Library {
 			// remove book from student's book list
 			student.removeBook(book);
 
-			System.out.println("Book returned successfully.");
-
 		} else {
 			// book is not issued to anyone
 			System.out.println("Book is not issued.");
@@ -275,7 +270,7 @@ public class Library {
 		int i = 0;
 
 		// iterate list and find matching Id
-		while (i < studentList.length) {
+		while (i < studentList.length && student==null) {
 			if (studentList[i].getsId() == id) {
 				student = studentList[i]; // if Id found
 			}

@@ -1,0 +1,6 @@
+ISBN	Name	Author	Price	Status
+1	book1	author1	100.0	Not Issued
+2	book2	author2	200.0	Not Issued
+3	book3	author3	100.0	Not Issued
+4	book4	author4	50.0	Not Issued
+5	book5	author5	250.0	Not Issued

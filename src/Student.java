@@ -127,26 +127,42 @@ public class Student {
 	 *            object of book
 	 */
 	public void removeBook(Book book) {
-		int size = books.length; // size of book array
-		int i = 0;
+		
+		//size of book array
+		int size = books.length; 
+		
+		// find index of book
+		int removeIndex = indexOf(book);
+		
+		//remove book at remove index
+		books[removeIndex]=null;
 
-		// iterate loop and remove given book
-		while (i < size) {
-
-			// check for match
-			if (books[i] == book) {
-				--size; // decrease size of book array
-
-				// re arrange book array
-				while (i < size) {
-					books[i] = books[i + 1]; // shift array elements
-					++i;
+		int i=0;
+		
+		//iterate loop
+		while(i<size)
+		{
+			//check for null
+			if(books[i]==null)
+			{
+				//rearrange books array
+				int k=i+1;
+				while(k<size)
+				{
+					books[k-1] = books[k]; //shift elements
+					k=k+1; //iterate loop variable
 				}
-
+				
+				//set index to null
+				books[books.length-1] = null;
 			}
-			i = i + 1; // increment iteration
+			i=i+1;	//iterate loop variable
 		}
-	}
+		
+		System.out.println("Book returned successfully.");
+    } 
+
+	
 
 	/**
 	 * Method prints the student object data.
